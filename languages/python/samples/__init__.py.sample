@@ -1,0 +1,26 @@
+"""
+One-line description of what this package does.
+
+Longer description if needed — what it's for, who uses it, what
+problems it solves.
+
+"""
+
+from __future__ import annotations  # Needed only while supporting Python <= 3.13; drop on 3.14+.
+
+from ._exceptions import ConnectionError, SessionError, YourProjectError
+from ._models import Connection, Session
+
+try:
+    from ._version import __version__
+except ModuleNotFoundError:
+    __version__ = "0.0.0+unknown"
+
+__all__ = (
+    "Connection",
+    "ConnectionError",
+    "Session",
+    "SessionError",
+    "YourProjectError",
+    "__version__",
+)

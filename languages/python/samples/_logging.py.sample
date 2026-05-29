@@ -1,0 +1,51 @@
+"""
+Library-scoped loggers for your-project.
+
+Silent by default. Consuming applications opt in::
+
+    from loguru import logger
+    logger.enable("your_project")
+
+"""
+
+from __future__ import annotations  # Needed only while supporting Python <= 3.13; drop on 3.14+.
+
+from loguru import logger as _base_logger
+
+# "your-project" is the project name — used for filtering via extra["library"].
+# "your_project" is the Python package name — used by logger.enable/disable,
+# which matches against each calling module's __name__.
+logger = _base_logger.bind(library="your-project")
+_base_logger.disable("your_project")
+
+
+# ---------------------------------------------------------------------------
+# Client-side usage (in the consuming application, not in the library)
+# ---------------------------------------------------------------------------
+#
+# Enable all logging from the library:
+#
+#     from loguru import logger
+#     logger.enable("your_project")
+#
+# Enable with a minimum level:
+#
+#     from loguru import logger
+#     logger.enable("your_project")
+#     logger.add(sys.stderr, filter="your_project", level="WARNING")
+#
+# Filter by the library tag (useful when multiple libraries use loguru):
+#
+#     from loguru import logger
+#     logger.add(
+#         sys.stderr,
+#         filter=lambda record: record["extra"].get("library") == "your-project",
+#     )
+#
+# Send one library's logs to a file, another to stderr:
+#
+#     from loguru import logger
+#     logger.enable("your_project")
+#     logger.enable("other_lib")
+#     logger.add("your_project.log", filter="your_project")
+#     logger.add(sys.stderr, filter="other_lib", level="ERROR")

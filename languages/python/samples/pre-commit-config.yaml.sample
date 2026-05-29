@@ -1,0 +1,46 @@
+# .pre-commit-config.yaml — standard hook sequence
+#
+# Managed by prek (not pre-commit). Install: prek install
+# Run manually: prek run --all-files
+#
+# Hook order matters: scan for secrets first, then format, lint, type-check, test.
+# Each stage must pass before code enters history.
+
+repos:
+  # One-time setup: run `detect-secrets scan > .secrets.baseline` and commit the result.
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.20
+    hooks:
+      - id: ruff-format
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+
+  - repo: local
+    hooks:
+      - id: ty
+        name: ty
+        entry: uv run ty check
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: pytest
+        name: pytest
+        # Doctests run via addopts in pyproject.toml — one source of truth.
+        # Slow-marked tests are deselected here; CI runs the full suite.
+        entry: uv run pytest -m "not slow"
+        language: system
+        pass_filenames: false
+        always_run: true
+
+  # Optional but recommended: catch typos in code, comments, and docs.
+  # - repo: https://github.com/codespell-project/codespell
+  #   rev: v2.4.1
+  #   hooks:
+  #     - id: codespell

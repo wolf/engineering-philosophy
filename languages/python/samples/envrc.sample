@@ -1,0 +1,12 @@
+# .envrc — project-level direnv configuration
+#
+# Copy or symlink this to .envrc at the project root.
+# .envrc is gitignored — add credentials or local overrides there.
+#
+# Requires layout_uv in ~/.config/direnv/direnvrc (see direnvrc.sample).
+
+layout uv
+
+# Project-specific environment variables go here. Examples:
+# export DATABASE_URL="postgresql://user:pass@localhost:5432/mydb"
+# export LOG_LEVEL="DEBUG"
