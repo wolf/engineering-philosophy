@@ -18,7 +18,9 @@ A goal must describe something you can validate. If you can't define what "met" 
 
 Goals come in different shapes. Some are durable: a minimum performance bar, a correctness invariant, a compatibility guarantee. Some are ephemeral: a delivery constraint tied to a specific client or date, a migration that must be complete before another team can ship. Both are real goals, but ephemeral goals expire. Recognize them as such, and remove them when their conditions no longer apply.
 
-Goals drive everything downstream. They determine what to build, how to design it, what to measure, and what to test. They tell you when you're done — not just "it works," but "it works, and now I can move on to the next problem." They also tell you when to stop: if the goal is met, stop building. If the goal can't be met, stop and say so. And they tell you when to ship: you will never be **done**, but there will come a point where you are useful — and useful, not done, is the bar. Don't wait — release when you are useful.
+Goals drive everything downstream. They determine what to build, how to design it, what to measure, and what to test. They tell you when you're done — not just "it works," but "it works, and now I can move on to the next problem." They also tell you when to stop: if the goal is met, stop building. If the goal can't be met, stop and say so.
+
+And they tell you when to ship. As you build, the work passes through stages: a point where other eyes on it would help; a point where other hands running it would reveal more; a point where it is useful; a point where the goals are satisfied — some met, some refuted. Beyond all of these lies a point where *you* are satisfied, and that one never arrives. The goals define done; your satisfaction does not. The earlier stages come long before you are willing to admit it, so deliver the work into the right hands as soon as it is useful — which is before you are ready. The work goes on.
 
 Goals must be prioritized. When goals conflict — and they will — priority is the tiebreaker. Without explicit priority, conflicts are resolved by whoever is loudest or most recent, which is not a strategy.
 
