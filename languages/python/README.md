@@ -1,12 +1,12 @@
 # Python
 
-The Python layer of the [engineering philosophy](../../README.md): language-specific standards, an audit checklist, and starter samples. The language-agnostic foundations — [What Matters Most](../../WHAT-MATTERS-MOST.md) and [Standards for Shared Projects](../../STANDARDS-FOR-SHARED-PROJECTS.md) — apply first; everything here makes them concrete for Python.
+The Python layer of the [engineering philosophy](../../README.md): language-specific standards, an audit checklist, and starter samples. The language-agnostic foundations, [What Matters Most](../../WHAT-MATTERS-MOST.md) and [Standards for Shared Projects](../../STANDARDS-FOR-SHARED-PROJECTS.md), apply first; everything here makes them concrete for Python.
 
 ## The Documents
 
-* **[Standards](STANDARDS.md)** — Python-specific standards. Covers tooling (ruff, ty, pytest, prek, loguru), project layout (uv, pixi, hatchling), style, imports, error handling, CLI and library conventions, and AI usage.
+* **[Standards](STANDARDS.md)**: Python-specific standards. Covers tooling (ruff, ty, pytest, prek, loguru), project layout (uv, pixi, hatchling), style, imports, error handling, CLI and library conventions, and AI usage.
 
-* **[Audit Checklist](AUDIT-CHECKLIST.md)** — Practical methodology for auditing existing Python code against these standards. Each section maps to one or more of the four principles.
+* **[Audit Checklist](AUDIT-CHECKLIST.md)**: Practical methodology for auditing existing Python code against these standards. Each section maps to one or more of the four principles.
 
 ## Samples
 
@@ -16,7 +16,7 @@ The [samples/](samples/) directory contains starter files and reference patterns
 |---|---|
 | `pyproject.toml.sample` | Complete project config: build system, metadata, ruff, ty, pytest |
 | `pre-commit-config.yaml.sample` | Standard prek hook sequence (detect-secrets, ruff-format, ruff, ty, pytest with doctests) |
-| `__init__.py.sample` | Package init — docstring, relative imports, `__all__` as tuple |
+| `__init__.py.sample` | Package init: docstring, relative imports, `__all__` as tuple |
 | `_logging.py.sample` | Loguru library setup (disabled by default, tagged) with client-side usage |
 | `LICENSE.md.sample` | MIT license template |
 | `envrc.sample` | Project-level `.envrc` for direnv |
