@@ -20,7 +20,6 @@ The [samples/](samples/) directory contains starter files and reference patterns
 | `_logging.py.sample` | Loguru library setup (disabled by default, tagged) with client-side usage |
 | `LICENSE.md.sample` | MIT license template |
 | `envrc.sample` | Project-level `.envrc` for direnv |
-| `direnvrc.sample` | Global `layout_uv` function for `~/.config/direnv/direnvrc` |
 
 ## Tool Choices
 
